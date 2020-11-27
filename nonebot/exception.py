@@ -146,3 +146,22 @@ class ActionFailed(Exception):
 
     def __str__(self):
         return self.__repr__()
+
+
+class ApiError(Exception):
+    """
+    :说明:
+
+      API 请求成功返回数据，但 API 操作失败。
+
+    """
+
+    def __init__(self, errcode: int, errmsg: str):
+        self.errcode = errcode
+        self.errmsg = errmsg
+
+    def __repr__(self):
+        return f"<ApiError errcode={self.errcode} errmsg={self.errmsg}>"
+
+    def __str__(self):
+        return self.__repr__()

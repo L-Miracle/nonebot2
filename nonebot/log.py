@@ -75,7 +75,7 @@ default_format = (
     "<g>{time:MM-DD HH:mm:ss}</g> "
     "[<lvl>{level}</lvl>] "
     "<c><u>{name}</u></c> | "
-    # "<c>{function}:{line}</c>| "
+    #   "<c>{file}/{function}:{line}</c>| "
     "{message}")
 logger.add(sys.stdout,
            colorize=True,

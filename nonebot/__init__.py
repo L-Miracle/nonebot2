@@ -140,6 +140,7 @@ from nonebot.utils import escape_tag
 from nonebot.config import Env, Config
 from nonebot.log import logger, default_filter
 from nonebot.adapters.cqhttp import Bot as CQBot
+from nonebot.adapters.ding import Bot as DingBot
 
 try:
     import nonebot_test
@@ -192,6 +193,7 @@ def init(*, _env_file: Optional[str] = None, **kwargs):
 
         # register build-in adapters
         _driver.register_adapter("cqhttp", CQBot)
+        _driver.register_adapter("ding", DingBot)
 
         # load nonebot test frontend if debug
         if config.debug and nonebot_test:
